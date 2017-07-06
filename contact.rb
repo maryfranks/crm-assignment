@@ -43,8 +43,16 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
-
+  def update(attribute, value)
+    if attribute == "first_name"
+      self.first_name = value
+    elsif attribute == "last_name"
+      self.last_name = value
+    elsif attribute == "email"
+      self.email = value
+    elsif attribute == "note"
+      self.note = value
+    end
   end
 
   # This method should work similarly to the find method above
