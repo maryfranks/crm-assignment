@@ -2,8 +2,9 @@ require_relative 'contact'
 
 class CRM
 
-  def initialize
-
+  def initialize(name)
+    puts "This is the #{name} CRM!"
+    @name = name 
   end
 
   def main_menu
@@ -11,7 +12,7 @@ class CRM
         print_main_menu
         user_selected = gets.to_i
         call_option(user_selected)
-      end
+    end
   end
 
   def print_main_menu
