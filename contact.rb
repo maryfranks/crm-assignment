@@ -75,11 +75,11 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    @@contacts = []
   end
 
   def full_name
-
+    "#{first_name} #{last_name}"
   end
 
   # This method should delete the contact
