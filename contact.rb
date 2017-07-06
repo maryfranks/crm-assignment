@@ -37,9 +37,6 @@ class Contact
         return contact
       end
     end
-
-    contact = @@contacts.select(id)
-    return contact
   end
 
   # This method should allow you to specify
@@ -54,8 +51,26 @@ class Contact
   # but it should allow you to search for a contact using attributes other than id
   # by specifying both the name of the attribute and the value
   # eg. searching for 'first_name', 'Betty' should return the first contact named Betty
-  def self.find_by
-
+  def self.find_by(attribute, value)
+    if attribute == "first_name"
+      @@contacts.each do |contact|
+        if contact.first_name == value
+          return contact
+        end
+      end
+    elsif attribute == "last_name"
+      @@contacts.each do |contact|
+        if contact.last_name == value
+          return contact
+        end
+      end
+    elsif attribute == "email"
+      @@contacts.each do |contact|
+        if contact.email == value
+          return contact
+        end
+      end
+    end
   end
 
   # This method should delete all of the contacts
