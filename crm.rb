@@ -4,7 +4,7 @@ class CRM
 
   def initialize(name)
     puts "This is the #{name} CRM!"
-    @name = name 
+    @name = name
   end
 
   def main_menu
@@ -54,7 +54,14 @@ class CRM
   end
 
   def modify_existing_contact
-
+    puts "id"
+    contact_to_change = gets.chomp
+    puts "what attribute do you want to change: enter first_name, last_name, email, or note"
+    attribute_to_change = gets.chomp
+    puts "what do you want the new value to be"
+    new_value = gets.chomp
+    # use the id to select which contact to call the method on
+    # call update from contacts (attribute to change, new_value)
   end
 
   def delete_contact
