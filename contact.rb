@@ -2,7 +2,6 @@ class Contact
 
   attr_accessor :first_name, :last_name, :email, :note
   attr_reader :id
-  
 
   @@contacts = []
   @@id = 1
@@ -25,10 +24,9 @@ class Contact
     return new_contact
   end
 
-
   # This method should return all of the existing contacts
   def self.all
-
+    @@contacts
   end
 
   # This method should accept an id as an argument
