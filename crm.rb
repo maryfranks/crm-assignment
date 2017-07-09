@@ -55,13 +55,17 @@ class CRM
 
   def modify_existing_contact
     puts "id"
-    contact_to_change = gets.chomp
+    which_contact = gets.chomp
     puts "what attribute do you want to change: enter first_name, last_name, email, or note"
     attribute_to_change = gets.chomp
     puts "what do you want the new value to be"
     new_value = gets.chomp
     # use the id to select which contact to call the method on
+    contact_to_change = Contact.find(which_contact.to_i)
     # call update from contacts (attribute to change, new_value)
+    contact_to_change.update(attribute_to_change, new_value)
+    puts contact_to_change
+    return contact_to_change
   end
 
   def delete_contact
