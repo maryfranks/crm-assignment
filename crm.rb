@@ -69,7 +69,11 @@ class CRM
   end
 
   def delete_contact
-
+    puts "What is the ID of the contact you'd like to delete?"
+    which_contact = gets.chomp
+    contact_to_delete = Contact.find(which_contact.to_i)
+    contact_to_delete.delete
+    puts "Contact Deleted"
   end
 
   def display_all_contacts
