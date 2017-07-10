@@ -17,4 +17,4 @@ class Contact < ActiveRecord::Base
 
 end
 
-Contact.auto.ugrade!
+Contact.auto_upgrade!
