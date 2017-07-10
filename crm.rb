@@ -92,5 +92,8 @@ class CRM
     puts "#{contact.last_name}, #{contact.first_name}. #{contact.email}. #{contact.note}"
   end
 
+end
 
+at_exit do
+  ActiveRecord::Base.connection.close
 end
