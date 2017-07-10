@@ -68,7 +68,7 @@ class CRM
     # use the id to select which contact to call the method on
     contact_to_change = Contact.find(which_contact.to_i)
     # call update from contacts (attribute to change, new_value)
-    contact_to_change.update(attribute_to_change, new_value)
+    contact_to_change.update(attribute_to_change => new_value)
     puts "New contact information: #{contact_to_change.first_name} #{contact_to_change.last_name},
           #{contact_to_change.email}, #{contact_to_change.note}"
   end
@@ -84,16 +84,16 @@ class CRM
   def display_all_contacts
     all = Contact.all
     all.each do |contact|
-      puts "#{contact.last_name}, #{contact.first_name}. #{contact.email}. #{contact.note}"
+      puts "#{contact.id}: #{contact.last_name}, #{contact.first_name}. #{contact.email}. #{contact.note}"
     end
   end
 
   def search_by_attribute
     puts "What would you like to search by?  Enter: first_name, last_name, or email"
     attribute_to_search_by = gets.chomp
-    puts "What is the search term?"
+    puts "What would you like to search for?"
     search_term = gets.chomp
-    contact = Contact.find_by(attribute_to_search_by, search_term)
+    contact = Contact.find_by(attribute_to_search_by => search_term)
     puts "#{contact.last_name}, #{contact.first_name}. #{contact.email}. #{contact.note}"
   end
 
